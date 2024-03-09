@@ -1,38 +1,136 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+  font-family: Arial, sans-serif;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: black;
+}
+
+.logo {
+  height: 50px; 
+  cursor: pointer;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.col {
+  flex: 1 0 21%;
+  margin: 1em;
+}
+
+.card {
+  position: relative;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 0% !important;
+}
+
+.card-img-top {
+  width: 50%;
+  height: auto;
+  border-radius: 0% !important;
+}
+
+.card-body {
+  background-color: black;
+  color: white;
+  padding: 10px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  border-top: 2px solid red;
+}
+
+.card-text {
+  font-size: 18px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.cutout {
+  width: 20px;
+  height: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.card::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border-bottom: 30px solid white;
+  border-left: 30px solid transparent;
+}
+
+.search-container {
+  position: relative;
+  display: inline-block;
+  width: 95.3%;
+  padding-left:30px; 
+}
+
+.search-input {
+  padding: 10px;
+  padding-left: 30px;
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid black;
+  outline: none;
+  font-size: 16px;
+  background: transparent;
+}
+
+.search-icon {
+  position: absolute;
+  left: 30px;
+  top: 10px;
+  color: black;
+}
+
+@media (max-width: 600px) {
+  .search-container {
+    width: 100%;
+    padding-left: 10px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .col {
+    flex: 1 0 100%; 
+  }
+
+  .search-input {
+    width: 100%;
+  }
+
+  .col {
+    flex: 1 0 100%;
+  }
+
+  .card {
+    width: 90%;
+  }
+}
+
+@media (max-width: 1200px) {
+  .col {
+    flex: 1 0 30%;
+  }
+}
+
+@media (max-width: 800px) {
+  .col {
+    flex: 1 0 45%;
   }
 }
