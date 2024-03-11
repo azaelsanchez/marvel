@@ -52,9 +52,9 @@ console.log(heroes);
             <p className="search-container">{heroes.length} resultados</p>
             <div className="row row-cols-1 row-cols-md-6 g-4 border-0">
                 {heroes.map(per => (
-                    <div className="col mt-2" key={per.id}>
-                        <div className="card" onClick={() => navigate(`/character/${per.id}`)} style={{ width: '13rem', height: '13rem', position: 'relative', overflow: 'hidden', border:'none' }}>
-                            <img src={`${per.thumbnail.path}.${per.thumbnail.extension}`} alt="Imagen de heroe" className="card-img-top" />
+                    <div className="col mt-1" key={per.id}>
+                        <div className="card" onClick={() => navigate(`/character/${per.id}`)} style={{ width: '13rem', height: '15rem', position: 'relative', overflow: 'hidden', border:'none', borderRadius: '10px'}}>
+                        <img src={`${per.thumbnail.path}.${per.thumbnail.extension}`} alt="Imagen de heroe" className="card-img-top" style={{ height: '80%', objectFit: 'cover' }} />
                             <div className="card-body">
                                 <p className="card-text">{per.name}</p>
                                 <button onClick={(e) => {

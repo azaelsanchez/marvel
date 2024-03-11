@@ -3,8 +3,9 @@
 }
 
 html, body {
+  height: 100%;
   margin: 0;
-  padding: 0;
+  width: 100%;
 }
 
 .App-header{
@@ -88,6 +89,7 @@ h1 {
   display: inline-block;
   width: 95.3%;
   padding-left:30px; 
+  padding-bottom: 5px;
 }
 
 .search-input {
@@ -156,9 +158,8 @@ h1 {
   background: none;
   border: none;
   cursor: pointer;
-  align-self: flex-start;
-  margin-right: auto;
-  margin-left: auto;
+  align-self: center;
+  margin: 0;
 }
 .icono-corazon {
   width: 24px; 
@@ -208,10 +209,12 @@ h1 {
 }
 
 .character-header {
-  position: relative; /* Añade esta línea */
+  position: relative;
   width: 100%;
   display: flex;
-  align-items: start;
+  justify-content: center; /* Centra el contenido horizontalmente */
+  align-items: center; /* Centra el contenido verticalmente */
+
   background-color: black;
   color: white;
 }
@@ -247,12 +250,15 @@ h1 {
 }
 
 .character-page {
+  width: 100vw; /* Ocupa el 100% del ancho de la ventana */
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: center; /* Centra verticalmente */
+  align-items: center;
 }
 .comics-section{
-  width: 63%;
+  width: 55%;
+  margin: 0 auto;
 }
 
 
@@ -265,9 +271,10 @@ h1 {
 }
 .character-header-content {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center; /* Centra el contenido horizontalmente */
+  align-items: center; /* Centra el contenido verticalmente */
   width: 100%;
+
 }
 .character-details h1 {
   margin: 0;
@@ -280,10 +287,9 @@ h1 {
   color: #FFF; 
 }
 .character-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
+  width: 100%; /* Ocupa el ancho completo de la página */
+  max-width: none; /* Elimina el ancho máximo si lo prefieres */
+  margin: 0 auto; 
 }
 
 .carousel-image {
@@ -316,25 +322,47 @@ h1 {
   padding: 20px 0;
 }
 .character-image-container {
-  position: relative; /* O absolute, dependiendo de tu estructura HTML */
-  top: 0; /* Ajusta según sea necesario */
-  left: 50%;
-  transform: translateX(-200%);
+  flex: 1; /* Permite que el contenedor de la imagen crezca */
+  display: flex;
+  justify-content: center;
+  padding-left: 15%;
 }
 .character-info-container {
-  position: relative; /* O absolute, dependiendo de tu estructura HTML */
-  top: 0; /* Ajusta según sea necesario */
-  left: 50%;
-  transform: translateX(-120%);
-  margin-top: 50px;
+  flex: 2; /* Permite que el contenedor de la información crezca el doble que la imagen */
+  flex-direction: column;
+  width: 50%
 }
 .character-description-container {
-  width: 100%; /* Asegura que el contenedor ocupe todo el ancho disponible */
+  max-width: 60%; /* Asegura que el contenedor ocupe todo el ancho disponible */
 }
 .character-name-and-heart {
   display: flex;
   justify-content: space-between; /* Separa el nombre y el botón de favoritos */
   align-items: center; /* Alinea verticalmente el nombre y el botón de favoritos */
 }
+.character-image-container,
+.character-info-container {
+  display: flex;
+}
 
+.character-header,
+.character-description-container
+ {
+  width: 100%; /* Establece el ancho al 100% para todos los contenedores anidados */
+}
+@media (max-width: 768px) {
+  .character-content,
+  .character-header,
+  .character-description-container,
+  .comics-section {
+    width: 100%; /* Ajusta el ancho al 100% para pantallas más pequeñas */
+  }
+}
+.character-name-and-heart {
+  max-width: 60%;
+}
 
+.character-description-container p {
+  text-align: justify; /* Justifica el texto de la descripción */
+  margin-left: 0; /* Asegúrate de que no haya margen a la izquierda */
+}
