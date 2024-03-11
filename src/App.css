@@ -2,15 +2,22 @@
   font-family: Arial, sans-serif;
 }
 
-.App-header {
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+.App-header{
   display: flex;
   justify-content: space-between;
   padding: 20px;
   background-color: black;
+  width: 100%;
+  border-bottom: 1px solid rgba(253, 253, 253, 0.5);
 }
 
 .logo {
-  height: 50px; 
+  height: 50px;
   cursor: pointer;
 }
 
@@ -50,7 +57,6 @@ h1 {
   position: absolute;
   bottom: 0;
   width: 100%;
-  box-sizing: border-box;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -72,10 +78,10 @@ h1 {
   position: absolute;
   bottom: 0;
   right: 0;
-  width: 30px; /* Ajusta el tamaño del triángulo aquí */
-  height: 30px; /* Ajusta el tamaño del triángulo aquí */
-  background: linear-gradient(to top left, white 49%, transparent 51%); /* Ajusta el gradiente para un cambio más suave */
-  z-index: 1; /* Asegúrate de que el pseudo-elemento esté sobre el fondo */
+  width: 30px; 
+  height: 30px; 
+  background: linear-gradient(to top left, white 49%, transparent 51%); 
+  z-index: 1; 
 }
 .search-container {
   position: relative;
@@ -142,31 +148,47 @@ h1 {
   border: none;
   cursor: pointer;
   position: absolute;
-  top: 10px; /* Ajusta según sea necesario */
-  right: 10px; /* Ajusta según sea necesario */
+  top: 10px; 
+  right: 10px; 
 }
 
+.heart-button-details {
+  background: none;
+  border: none;
+  cursor: pointer;
+  align-self: flex-start;
+  margin-right: auto;
+  margin-left: auto;
+}
 .icono-corazon {
-  width: 24px; /* Ajusta según sea necesario */
+  width: 24px; 
   height: auto;
+}
+
+.icono-corazon-details{
+  width: 30px; 
+  height: auto;
+  align-content:inherit;
+  margin-left: auto;
 }
 
 .is-favorite .icono-corazon {
   filter: brightness(0) saturate(100%) invert(20%) sepia(99%) saturate(7483%) hue-rotate(356deg) brightness(92%) contrast(89%);
 }
+.is-favorite .icono-corazon-details {
+  filter: brightness(0) saturate(100%) invert(20%) sepia(99%) saturate(7483%) hue-rotate(356deg) brightness(92%) contrast(89%);
+}
 .favorites-button {
-  background: none;
+  background-color: transparent;
   border: none;
-  cursor: pointer;
-  position: absolute;
-  top: 20px;
-  right: 20px;
+  color: white;
   display: flex;
   align-items: center;
+  position: relative;
 }
 
 .icono-corazon-header {
-  width: 24px; /* Ajusta según sea necesario */
+  width: 24px; 
   height: auto;
   filter: brightness(0) saturate(100%) invert(20%) sepia(99%) saturate(7483%) hue-rotate(356deg) brightness(92%) contrast(89%);
 }
@@ -176,4 +198,143 @@ h1 {
   color: white;
   font-size: 18px;
 }
+
+.sidebar {
+  height: 100vh; 
+  width: 250px; 
+  position: fixed; 
+  left: 0; 
+  top: 0; 
+}
+
+.character-header {
+  position: relative; /* Añade esta línea */
+  width: 100%;
+  display: flex;
+  align-items: start;
+  background-color: black;
+  color: white;
+}
+
+.character-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 30px; 
+  height: 30px; 
+  background: linear-gradient(to top left, white 49%, transparent 51%);
+}
+
+.character-image {
+  height: 300px;
+  max-width: 100%; 
+  object-fit: cover;
+}
+
+.character-info {
+  text-align: center; 
+  color: white;
+}
+.comics-section h2 {
+  margin-top: 0;
+}
+
+.comics-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 20px;
+}
+
+.character-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.comics-section{
+  width: 63%;
+}
+
+
+.comic-image {
+  width: 100%; 
+}
+
+.character-details {
+  flex-grow: 1;
+}
+.character-header-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.character-details h1 {
+  margin: 0;
+  padding: 0;
+  color: #FFF; 
+}
+.character-details p {
+  margin: 0;
+  padding: 0;
+  color: #FFF; 
+}
+.character-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.carousel-image {
+  height: 300px;
+  padding-left: 10px;
+}
+.carousel-container {
+  display: flex;
+  overflow-x: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: red transparent;
+  margin-bottom: -10px;
+}
+
+.carousel-container::-webkit-scrollbar {
+  height: 5px;
+}
+
+.carousel-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.carousel-container::-webkit-scrollbar-thumb {
+  background-color: red; 
+  border-radius: 20px;
+  border: 3px solid transparent;
+}
+.carousel-outer-container {
+  overflow: hidden;
+  padding: 20px 0;
+}
+.character-image-container {
+  position: relative; /* O absolute, dependiendo de tu estructura HTML */
+  top: 0; /* Ajusta según sea necesario */
+  left: 50%;
+  transform: translateX(-200%);
+}
+.character-info-container {
+  position: relative; /* O absolute, dependiendo de tu estructura HTML */
+  top: 0; /* Ajusta según sea necesario */
+  left: 50%;
+  transform: translateX(-120%);
+  margin-top: 50px;
+}
+.character-description-container {
+  width: 100%; /* Asegura que el contenedor ocupe todo el ancho disponible */
+}
+.character-name-and-heart {
+  display: flex;
+  justify-content: space-between; /* Separa el nombre y el botón de favoritos */
+  align-items: center; /* Alinea verticalmente el nombre y el botón de favoritos */
+}
+
 

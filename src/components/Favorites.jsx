@@ -43,7 +43,7 @@ function Favorites() {
       <div className="row row-cols-1 row-cols-md-6 g-4">
         {filteredFavorites.map(per => (
           <div className="col mt-2" key={per.id}>
-            <div className="card" style={{ width: '15rem', height: '15rem', position: 'relative', overflow: 'hidden' }}>
+            <div className="card" style={{ width: '15rem', height: '15rem', position: 'relative', overflow: 'hidden', border:'none' }}>
               <img src={`${per.thumbnail.path}.${per.thumbnail.extension}`} alt="Imagen de heroe" className="card-img-top" />
               <div className="card-body">
                 <p className="card-text">{per.name}</p>
