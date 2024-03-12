@@ -1,5 +1,6 @@
+Firts Install all dependencies
 
-npm i for install all dependencies
+### `npm install` 
 
 In the project directory, you can run:
 
