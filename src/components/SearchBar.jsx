@@ -15,7 +15,7 @@ function SearchBar({ onSearch }) {
       <FaSearch className="search-icon" />
       <input
         type="text"
-        placeholder="Buscar un personaje..."
+        placeholder="SEARCH A CHARACTER..."
         className="search-input"
         value={search}
         onChange={handleSearchChange}

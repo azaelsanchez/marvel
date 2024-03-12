@@ -2,13 +2,14 @@
   font-family: Arial, sans-serif;
 }
 
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
   width: 100%;
 }
 
-.App-header{
+.App-header {
   display: flex;
   justify-content: space-between;
   padding: 20px;
@@ -27,22 +28,11 @@ h1 {
   color: #333;
 }
 
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-
-.col {
-  flex: 1 0 11%;
-  margin: 1em;
-}
-
 .card {
   position: relative;
   cursor: pointer;
   border-radius: 0% !important;
-  overflow: hidden; 
+  overflow: hidden;
 }
 
 .card-img-top {
@@ -81,14 +71,15 @@ h1 {
   right: 0;
   width: 15px;
   height: 15px;
-  background: linear-gradient(to top left, white 49%, transparent 51%); 
-  z-index: 1; 
+  background: linear-gradient(to top left, white 49%, transparent 51%);
+  z-index: 1;
 }
+
 .search-container {
   position: relative;
   display: inline-block;
   width: 96%;
-  padding-left:30px; 
+  padding-left: 30px;
   padding-bottom: 5px;
 }
 
@@ -110,48 +101,13 @@ h1 {
   color: black;
 }
 
-@media (max-width: 600px) {
-  .search-container {
-    width: 100%;
-    padding-left: 10px;
-  }
-
-  .col {
-    flex: 1 0 100%; 
-  }
-
-  .search-input {
-    width: 100%;
-  }
-
-  .col {
-    flex: 1 0 100%;
-  }
-
-  .card {
-    width: 90%;
-  }
-}
-
-@media (max-width: 1200px) {
-  .col {
-    flex: 1 0 30%;
-  }
-}
-
-@media (max-width: 800px) {
-  .col {
-    flex: 1 0 45%;
-  }
-}
-
 .heart-button {
   background: none;
   border: none;
   cursor: pointer;
   position: absolute;
-  top: 10px; 
-  right: 1px; 
+  top: 10px;
+  right: 1px;
 }
 
 .heart-button-details {
@@ -161,24 +117,27 @@ h1 {
   align-self: center;
   margin: 0;
 }
+
 .icono-corazon {
-  width: 24px; 
+  width: 24px;
   height: auto;
 }
 
-.icono-corazon-details{
-  width: 30px; 
+.icono-corazon-details {
+  width: 30px;
   height: auto;
-  align-content:inherit;
+  align-content: inherit;
   margin-left: auto;
 }
 
 .is-favorite .icono-corazon {
   filter: brightness(0) saturate(100%) invert(20%) sepia(99%) saturate(7483%) hue-rotate(356deg) brightness(92%) contrast(89%);
 }
+
 .is-favorite .icono-corazon-details {
   filter: brightness(0) saturate(100%) invert(20%) sepia(99%) saturate(7483%) hue-rotate(356deg) brightness(92%) contrast(89%);
 }
+
 .favorites-button {
   background-color: transparent;
   border: none;
@@ -189,7 +148,7 @@ h1 {
 }
 
 .icono-corazon-header {
-  width: 24px; 
+  width: 24px;
   height: auto;
   filter: brightness(0) saturate(100%) invert(20%) sepia(99%) saturate(7483%) hue-rotate(356deg) brightness(92%) contrast(89%);
 }
@@ -201,20 +160,19 @@ h1 {
 }
 
 .sidebar {
-  height: 100vh; 
-  width: 250px; 
-  position: fixed; 
-  left: 0; 
-  top: 0; 
+  height: 100vh;
+  width: 250px;
+  position: fixed;
+  left: 0;
+  top: 0;
 }
 
 .character-header {
   position: relative;
   width: 100%;
   display: flex;
-  justify-content: center; 
-  align-items: center; 
-
+  justify-content: center;
+  align-items: center;
   background-color: black;
   color: white;
 }
@@ -224,21 +182,22 @@ h1 {
   position: absolute;
   bottom: 0;
   right: 0;
-  width: 30px; 
-  height: 30px; 
+  width: 30px;
+  height: 30px;
   background: linear-gradient(to top left, white 49%, transparent 51%);
 }
 
 .character-image {
   height: 300px;
-  max-width: 100%; 
+  max-width: 100%;
   object-fit: cover;
 }
 
 .character-info {
-  text-align: center; 
+  text-align: center;
   color: white;
 }
+
 .comics-section h2 {
   margin-top: 0;
 }
@@ -250,52 +209,58 @@ h1 {
 }
 
 .character-page {
-  width: 100vw; 
+  width: 100vw;
   display: flex;
   flex-direction: column;
-  justify-content: center; 
+  justify-content: center;
   align-items: center;
 }
-.comics-section{
+
+.comics-section {
   width: 55%;
   margin: 0 auto;
 }
 
 
 .comic-image {
-  width: 100%; 
+  width: 100%;
 }
 
 .character-details {
   flex-grow: 1;
 }
+
 .character-header-content {
   display: flex;
-  justify-content: center; 
+  justify-content: center;
   align-items: center;
   width: 100%;
 
 }
+
 .character-details h1 {
   margin: 0;
   padding: 0;
-  color: #FFF; 
+  color: #FFF;
 }
+
 .character-details p {
   margin: 0;
   padding: 0;
-  color: #FFF; 
+  color: #FFF;
 }
+
 .character-content {
-  width: 100%; 
-  max-width: none; 
-  margin: 0 auto; 
+  width: 100%;
+  max-width: none;
+  margin: 0 auto;
 }
 
 .carousel-image {
   height: 300px;
   padding-left: 10px;
 }
+
 .carousel-container {
   display: flex;
   overflow-x: scroll;
@@ -313,64 +278,277 @@ h1 {
 }
 
 .carousel-container::-webkit-scrollbar-thumb {
-  background-color: red; 
+  background-color: red;
   border-radius: 20px;
   border: 3px solid transparent;
 }
+
 .carousel-outer-container {
   overflow: hidden;
   padding: 20px 0;
 }
+
 .character-image-container {
-  flex: 1; 
+  flex: 1;
   display: flex;
   justify-content: center;
   padding-left: 15%;
 }
+
 .character-info-container {
-  flex: 2; 
+  flex: 2;
   flex-direction: column;
   width: 50%
 }
+
 .character-description-container {
-  max-width: 60%; 
+  max-width: 60%;
 }
+
 .character-name-and-heart {
   display: flex;
-  justify-content: space-between; 
-  align-items: center; 
+  justify-content: space-between;
+  align-items: center;
 }
+
 .character-image-container,
 .character-info-container {
   display: flex;
 }
 
 .character-header,
-.character-description-container
- {
-  width: 100%; 
+.character-description-container {
+  width: 100%;
 }
-@media (max-width: 768px) {
-  .character-content,
-  .character-header,
-  .character-description-container,
-  .comics-section {
-    width: 100%; 
-  }
-}
+
 .character-name-and-heart {
   max-width: 60%;
 }
 
 .character-description-container p {
-  text-align: justify; 
-  margin-left: 0; 
+  text-align: justify;
+  margin-left: 0;
 }
+
 .my-col {
   padding: 10px
 }
+
 .my-row {
   display: flex;
   flex-wrap: wrap;
   padding-left: 15px;
+}
+
+@media (max-width: 1200px) {}
+
+@media (max-width: 800px) {}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .card {
+    width: 23%;
+    margin: 1%;
+
+  }
+
+  .card-img-top {
+    width: 100%;
+    height: auto;
+
+  }
+
+  .character-content,
+  .character-header,
+  .character-description-container,
+  .comics-section {
+    width: 100%;
+  }
+
+  .character-image-container,
+  .character-info-container {
+    padding-left: 0;
+  }
+
+  .character-description-container {
+    max-width: 100%;
+  }
+
+  .character-name-and-heart {
+    max-width: 100%;
+  }
+
+  .character-image-container img {
+    height: 350px;
+  }
+
+  .character-info-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .character-name-and-heart {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  .character-description-container {
+    text-align: center;
+    padding: 0 20px;
+  }
+
+  .carousel-container {
+    scrollbar-width: none;
+  }
+
+  .carousel-container::-webkit-scrollbar {
+    display: none;
+  }
+
+  .character-header {
+    border: none;
+  }
+
+  .comics-section h2 {
+    margin-top: 0;
+    margin-left: 5px;
+  }
+
+  .comics-section {
+    margin-top: 20px;
+    margin-left: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .search-container {
+    width: 100%;
+    padding-left: 10px;
+  }
+
+
+  .search-input {
+    width: 100%;
+  }
+
+  .card {
+    width: 90%;
+  }
+}
+
+@media (max-width: 576px) {
+  .search-container {
+    width: 100%;
+    padding-left: 10px;
+  }
+
+
+  .search-input {
+    width: 100%;
+  }
+
+  .card {
+    width: 90%;
+  }
+}
+
+@media (max-width: 600px) {
+  .search-container {
+    width: 100%;
+    padding-left: 10px;
+  }
+
+
+  .search-input {
+    width: 100%;
+  }
+
+  .card {
+    width: 90%;
+  }
+
+  .search-icon {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: black
+  }
+
+  .character-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .character-image-container img {
+    width: 100%;
+    height: auto;
+    padding-left: 0%;
+  }
+
+  .character-image-container {
+    padding-left: 0%;
+  }
+
+  .character-info-container {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .character-name-and-heart {
+    justify-content: space-between;
+    padding: 0;
+    padding-left: 4%;
+    max-width: 100%;
+  }
+
+  .character-description-container {
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+    max-width: 100%;
+  }
+
+  .comics-section {
+    padding: 0 20px;
+  }
+
+  .character-info-container,
+  .character-name-and-heart,
+  .character-header-content {
+    width: 100%;
+  }
+
+  .character-page,
+  .character-content,
+  .character-header,
+  .character-description-container {
+    width: 100%;
+  }
+
+  .carousel-container {
+    flex-direction: row;
+    padding-bottom: 10px;
+  }
+
+  .carousel-image {
+    width: auto;
+    height: 150px;
+  }
+
+  .comics-section {
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  .comics-section h2 {
+    margin-top: 50px;
+    margin-bottom: 20px;
+  }
+
+  .character-header::after {
+    width: 40px;
+    height: 40px;
+  }
 }

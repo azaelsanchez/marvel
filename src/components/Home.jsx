@@ -12,7 +12,8 @@ function Home() {
     const [heroes, setHeroes] = useState([]);
     const [allHeroes, setAllHeroes] = useState([]); 
     const { favorites, setFavorites } = useContext(FavoritesContext);
-
+    
+    //Queria almacenarlos todos en un array y luego simplemente coger los 50 menos si es en el buscador que busque en todos pero la web de la documentacion estaba caida.
     useEffect(() => {
         axios.get('https://gateway.marvel.com:443/v1/public/characters?ts=1&limit=50&apikey=49f5db225b8af4ab82d3d36a9661ce16&hash=ced2cfb56e66e5e7bb74a615c11beedc')
             .then(res => {

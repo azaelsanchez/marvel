@@ -67,7 +67,7 @@ function CharacterDetails() {
                         </div>
                     </div>
                     <div className="comics-section">
-                        <h2>Cómics</h2>
+                        <h2><b>COMICS</b></h2>
                         <div className="carousel-container">
                             {comics.map((comic, index) => {
                                 const onsaleDateObj = comic.dates.find(dateObj => dateObj.type === 'onsaleDate');
