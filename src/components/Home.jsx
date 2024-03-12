@@ -10,25 +10,29 @@ import { FavoritesContext } from '../context/FavoritesContext.jsx';
 function Home() {
     const navigate = useNavigate();
     const [heroes, setHeroes] = useState([]);
+    const [allHeroes, setAllHeroes] = useState([]); 
     const { favorites, setFavorites } = useContext(FavoritesContext);
 
     useEffect(() => {
         axios.get('https://gateway.marvel.com:443/v1/public/characters?ts=1&limit=50&apikey=49f5db225b8af4ab82d3d36a9661ce16&hash=ced2cfb56e66e5e7bb74a615c11beedc')
             .then(res => {
                 setHeroes(res.data.data.results);
+                setAllHeroes(res.data.data.results); 
             })
             .catch(error => console.log(error));
     }, []);
 
     const handleSearch = (search) => {
-        const url = search === ''
-            ? 'https://gateway.marvel.com:443/v1/public/characters?ts=1&limit=50&apikey=49f5db225b8af4ab82d3d36a9661ce16&hash=ced2cfb56e66e5e7bb74a615c11beedc'
-            : `https://gateway.marvel.com:443/v1/public/characters?ts=1&nameStartsWith=${search}&apikey=49f5db225b8af4ab82d3d36a9661ce16&hash=ced2cfb56e66e5e7bb74a615c11beedc`;
-        axios.get(url)
-            .then(res => {
-                setHeroes(res.data.data.results);
-            })
-            .catch(error => console.log(error));
+        if (search === '') {
+            setHeroes(allHeroes); 
+        } else {
+            const searchUrl = `https://gateway.marvel.com:443/v1/public/characters?ts=1&nameStartsWith=${search}&apikey=49f5db225b8af4ab82d3d36a9661ce16&hash=ced2cfb56e66e5e7bb74a615c11beedc`;
+            axios.get(searchUrl)
+                .then(res => {
+                    setHeroes(res.data.data.results); 
+                })
+                .catch(error => console.log(error));
+        }
     };
 
     const toggleFavorite = (per) => {
@@ -49,13 +53,13 @@ console.log(heroes);
                 </button>
             </header>
             <SearchBar onSearch={handleSearch} />
-            <p className="search-container">{heroes.length} resultados</p>
-            <div className="row row-cols-1 row-cols-md-6 g-4 border-0">
+            <p className="search-container"><b>{heroes.length} RESULTS</b></p>
+            <div className="my-row">
                 {heroes.map(per => (
-                    <div className="col mt-1" key={per.id}>
-                        <div className="card" onClick={() => navigate(`/character/${per.id}`)} style={{ width: '13rem', height: '15rem', position: 'relative', overflow: 'hidden', border:'none', borderRadius: '10px'}}>
+                    <div className="my-col" key={per.id}>
+                        <div className="card" onClick={() => navigate(`/character/${per.id}`)} style={{ width: '13rem', height: '15rem', position: 'relative', overflow: 'hidden', border:'none', borderRadius: '1px'}}>
                         <img src={`${per.thumbnail.path}.${per.thumbnail.extension}`} alt="Imagen de heroe" className="card-img-top" style={{ height: '80%', objectFit: 'cover' }} />
-                            <div className="card-body">
+                            <div className="card-body2">
                                 <p className="card-text">{per.name}</p>
                                 <button onClick={(e) => {
                                     e.stopPropagation(); 

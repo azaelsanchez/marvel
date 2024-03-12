@@ -40,12 +40,12 @@ function Favorites() {
       <h1 style={{ textAlign: 'left', marginLeft: '20px' }}>FAVORITES</h1>
       <SearchBar onSearch={handleSearch} />
       <p className="search-container">{filteredFavorites.length} resultados</p>
-      <div className="row row-cols-1 row-cols-md-6 g-4">
+      <div className="my-row">
         {filteredFavorites.map(per => (
-          <div className="col mt-2" key={per.id}>
-            <div className="card" style={{ width: '15rem', height: '15rem', position: 'relative', overflow: 'hidden', border:'none' }}>
+          <div className="my-col" key={per.id}>
+            <div className="card" onClick={() => navigate(`/character/${per.id}`)} style={{ width: '13rem', height: '15rem', position: 'relative', overflow: 'hidden', border:'none', borderRadius: '1px'}}>
               <img src={`${per.thumbnail.path}.${per.thumbnail.extension}`} alt="Imagen de heroe" className="card-img-top" />
-              <div className="card-body">
+              <div className="card-body2">
                 <p className="card-text">{per.name}</p>
                 <button onClick={() => toggleFavorite(per)} className={`heart-button ${favorites.some(fav => fav.id === per.id) ? 'is-favorite' : ''}`}>
                   <img src={corazon} alt="Corazón" className="icono-corazon" />

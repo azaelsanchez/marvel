@@ -50,22 +50,22 @@ function CharacterDetails() {
             </header>
             <div className="character-page">
                 <main className="character-content">
-                <div className="character-header">
-      <div className="character-image-container">
-        <img src={`${characterDetails.thumbnail.path}.${characterDetails.thumbnail.extension}`} alt={characterDetails.name} className="character-image" />
-      </div>
-      <div className="character-info-container">
-        <div className="character-name-and-heart">
-          <h1>{characterDetails.name}</h1>
-          <button onClick={() => toggleFavorite(characterDetails)} className={`heart-button-details ${favorites.some(fav => fav.id === characterDetails.id) ? 'is-favorite' : ''}`}>
-            <img src={corazon} alt="Añadir a favoritos" className="icono-corazon-details" />
-          </button>
-        </div>
-        <div className="character-description-container">
-          <p className="character-description">{characterDetails.description || 'Descripción no disponible.'}</p>
-        </div>
-      </div>
-    </div>
+                    <div className="character-header">
+                        <div className="character-image-container">
+                            <img src={`${characterDetails.thumbnail.path}.${characterDetails.thumbnail.extension}`} alt={characterDetails.name} className="character-image" />
+                        </div>
+                        <div className="character-info-container">
+                            <div className="character-name-and-heart">
+                                <h1>{characterDetails.name}</h1>
+                                <button onClick={() => toggleFavorite(characterDetails)} className={`heart-button-details ${favorites.some(fav => fav.id === characterDetails.id) ? 'is-favorite' : ''}`}>
+                                    <img src={corazon} alt="Añadir a favoritos" className="icono-corazon-details" />
+                                </button>
+                            </div>
+                            <div className="character-description-container">
+                                <p className="character-description">{characterDetails.description || 'Descripción no disponible.'}</p>
+                            </div>
+                        </div>
+                    </div>
                     <div className="comics-section">
                         <h2>Cómics</h2>
                         <div className="carousel-container">
