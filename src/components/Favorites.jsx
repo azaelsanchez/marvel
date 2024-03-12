@@ -11,7 +11,6 @@ function Favorites() {
   const { favorites, setFavorites } = useContext(FavoritesContext);
   const [searchTerm, setSearchTerm] = useState('');
 
-  // Filtrar los favoritos basados en el término de búsqueda
   const filteredFavorites = favorites.filter(per =>
     per.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
@@ -43,11 +42,14 @@ function Favorites() {
       <div className="my-row">
         {filteredFavorites.map(per => (
           <div className="my-col" key={per.id}>
-            <div className="card" onClick={() => navigate(`/character/${per.id}`)} style={{ width: '13rem', height: '15rem', position: 'relative', overflow: 'hidden', border:'none', borderRadius: '1px'}}>
+            <div className="card" onClick={() => navigate(`/character/${per.id}`)} style={{ width: '13rem', height: '14rem', position: 'relative', overflow: 'hidden', border: 'none', borderRadius: '1px' }}>
               <img src={`${per.thumbnail.path}.${per.thumbnail.extension}`} alt="Imagen de heroe" className="card-img-top" />
               <div className="card-body2">
                 <p className="card-text">{per.name}</p>
-                <button onClick={() => toggleFavorite(per)} className={`heart-button ${favorites.some(fav => fav.id === per.id) ? 'is-favorite' : ''}`}>
+                <button onClick={(e) => {
+                  e.stopPropagation();
+                  toggleFavorite(per);
+                }} className={`heart-button ${favorites.some(fav => fav.id === per.id) ? 'is-favorite' : ''}`}>
                   <img src={corazon} alt="Corazón" className="icono-corazon" />
                 </button>
               </div>

@@ -212,8 +212,8 @@ h1 {
   position: relative;
   width: 100%;
   display: flex;
-  justify-content: center; /* Centra el contenido horizontalmente */
-  align-items: center; /* Centra el contenido verticalmente */
+  justify-content: center; 
+  align-items: center; 
 
   background-color: black;
   color: white;
@@ -250,10 +250,10 @@ h1 {
 }
 
 .character-page {
-  width: 100vw; /* Ocupa el 100% del ancho de la ventana */
+  width: 100vw; 
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Centra verticalmente */
+  justify-content: center; 
   align-items: center;
 }
 .comics-section{
@@ -271,8 +271,8 @@ h1 {
 }
 .character-header-content {
   display: flex;
-  justify-content: center; /* Centra el contenido horizontalmente */
-  align-items: center; /* Centra el contenido verticalmente */
+  justify-content: center; 
+  align-items: center;
   width: 100%;
 
 }
@@ -287,8 +287,8 @@ h1 {
   color: #FFF; 
 }
 .character-content {
-  width: 100%; /* Ocupa el ancho completo de la página */
-  max-width: none; /* Elimina el ancho máximo si lo prefieres */
+  width: 100%; 
+  max-width: none; 
   margin: 0 auto; 
 }
 
@@ -322,23 +322,23 @@ h1 {
   padding: 20px 0;
 }
 .character-image-container {
-  flex: 1; /* Permite que el contenedor de la imagen crezca */
+  flex: 1; 
   display: flex;
   justify-content: center;
   padding-left: 15%;
 }
 .character-info-container {
-  flex: 2; /* Permite que el contenedor de la información crezca el doble que la imagen */
+  flex: 2; 
   flex-direction: column;
   width: 50%
 }
 .character-description-container {
-  max-width: 60%; /* Asegura que el contenedor ocupe todo el ancho disponible */
+  max-width: 60%; 
 }
 .character-name-and-heart {
   display: flex;
-  justify-content: space-between; /* Separa el nombre y el botón de favoritos */
-  align-items: center; /* Alinea verticalmente el nombre y el botón de favoritos */
+  justify-content: space-between; 
+  align-items: center; 
 }
 .character-image-container,
 .character-info-container {
@@ -348,14 +348,14 @@ h1 {
 .character-header,
 .character-description-container
  {
-  width: 100%; /* Establece el ancho al 100% para todos los contenedores anidados */
+  width: 100%; 
 }
 @media (max-width: 768px) {
   .character-content,
   .character-header,
   .character-description-container,
   .comics-section {
-    width: 100%; /* Ajusta el ancho al 100% para pantallas más pequeñas */
+    width: 100%; 
   }
 }
 .character-name-and-heart {
@@ -363,8 +363,8 @@ h1 {
 }
 
 .character-description-container p {
-  text-align: justify; /* Justifica el texto de la descripción */
-  margin-left: 0; /* Asegúrate de que no haya margen a la izquierda */
+  text-align: justify; 
+  margin-left: 0; 
 }
 .my-col {
   padding: 10px
